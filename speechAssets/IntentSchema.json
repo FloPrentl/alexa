@@ -1,7 +1,16 @@
 {
   "intents": [
     {
-      "intent": "ListeAktionenIntent"
+      "intent":"ListeAktionenIntent"
+    },
+    {
+      "intent":"NaechsteAktionIntent"
+    },
+    {
+      "intent":"ListeTermineIntent"
+    },
+    {
+      "intent":"BeendeSessionIntent"
     }
   ]
 }

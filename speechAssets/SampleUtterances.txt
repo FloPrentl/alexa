@@ -1,1 +1,10 @@
-ListeAktionenIntent liste aktionen
+ListeAktionenIntent nach allen aktionen
+NaechsteAktionIntent nach einer aktion
+NaechsteAktionIntent was noch
+NaechsteAktionIntent und
+NaechsteAktionIntent weiter
+ListeTermineIntent nach terminen
+ListeTermineIntent nach den terminen
+ListeTermineIntent nach den nächsten terminen
+BeendeSessionIntent danke
+BeendeSessionIntent danke ella
