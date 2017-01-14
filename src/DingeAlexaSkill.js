@@ -79,6 +79,7 @@ listeAktionenIntent = (event, context) => {
     data.Items.forEach(function(item) {
         speechResponse = speechResponse.concat(" " + item.title + " ... ");
     });
+    speechResponse = "<speak>".concat(speechResponse).concat("</speak>");
     context.succeed(generateResponse({ lastIntent: 'listeAktionenIntent' }, speechResponse, true));
   };
 
@@ -109,6 +110,7 @@ naechsteAktionIntent = (event, context) => {
     }
     speechResponse = speechResponse.concat(data.Items[itemNummer].title);
     itemNummer = itemNummer + 1;
+    speechResponse = "<speak>".concat(speechResponse).concat("</speak>");
     context.succeed(generateResponse({ itemNummer: itemNummer, lastIntent: 'naechsteAktionIntent' }, speechResponse, false));
   };
 
@@ -147,6 +149,7 @@ listeTermineIntent = (event, context) => {
         speechResponse = speechResponse.concat(" " + item.weekday + " " + item.time + " " + item.title + " ... ");
       }
     });
+    speechResponse = "<speak>".concat(speechResponse).concat("</speak>");
     context.succeed(generateResponse({ lastIntent: 'listeTermineIntent' }, speechResponse, true));
   };
 
@@ -175,8 +178,9 @@ naechsteVokabelIntent = (event, context) => {
     } else {
         speechResponse = '';
     }
-    speechResponse = speechResponse.concat(" " + data.Items[itemNummer].latin + " bedeutet " + data.Items[itemNummer].german + " ... ");
+    speechResponse = speechResponse.concat(" " + data.Items[itemNummer].latin + " <break time='4s'/>bedeutet<break time='4s'/> " + data.Items[itemNummer].german + " ... ");
     itemNummer = itemNummer + 1;
+    speechResponse = "<speak>".concat(speechResponse).concat("</speak>");
     context.succeed(generateResponse({ itemNummer: itemNummer, lastIntent: 'naechsteVokabelIntent' }, speechResponse, false));
   };
 
@@ -204,8 +208,8 @@ generateResponse = (sessionAttributes, text, shouldEndSession) => {
     sessionAttributes: sessionAttributes,
     response: {
       outputSpeech: {
-        type: "PlainText",
-        text: text
+        type: "SSML",
+        ssml: text
       },
       shouldEndSession: shouldEndSession
     }
