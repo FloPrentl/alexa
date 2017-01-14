@@ -10,6 +10,15 @@
       "intent":"ListeTermineIntent"
     },
     {
+      "intent":"NeueVokabelIntent",
+      "slots": [
+        {
+          "name": "Vokabel",
+          "type": "AMAZON.LITERAL"
+        }
+      ]
+    },
+    {
       "intent":"BeendeSessionIntent"
     }
   ]

@@ -6,5 +6,6 @@ NaechsteAktionIntent weiter
 ListeTermineIntent nach terminen
 ListeTermineIntent nach den terminen
 ListeTermineIntent nach den nächsten terminen
+NeueVokabelIntent neue vokabel
 BeendeSessionIntent danke
 BeendeSessionIntent danke ella
